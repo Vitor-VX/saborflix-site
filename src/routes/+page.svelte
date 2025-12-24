@@ -1,27 +1,34 @@
 <script lang="ts">
-  import { categories } from '$lib/data/mock-data.js';
-  import CategoryCard from '$lib/components/CategoryCard.svelte';
+  import { categories } from "$lib/data/mock-data.js";
+  import CategoryCard from "$lib/components/CategoryCard.svelte";
+  import saborFlix from "$lib/assets/favicon.png";
 </script>
 
 <svelte:head>
+  <link rel="icon" href={saborFlix} />
   <title>Netflix da Confeiteira - Receitas Incríveis</title>
-  <meta name="description" content="Descubra receitas incríveis para você arrasar na cozinha e fazer seu negócio decolar!" />
+  <meta
+    name="description"
+    content="Descubra receitas incríveis para você arrasar na cozinha e fazer seu negócio decolar!"
+  />
 </svelte:head>
 
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-background">
-    <img 
-      src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=1920" 
-      alt="Deliciosas sobremesas" 
+    <img
+      src="https://images.pexels.com/photos/1055272/pexels-photo-1055272.jpeg?auto=compress&cs=tinysrgb&w=1920"
+      alt="Deliciosas sobremesas"
     />
     <div class="hero-overlay"></div>
   </div>
-  
+
   <div class="hero-content">
     <div class="container">
       <h1 class="hero-title">Netflix da Confeiteira</h1>
-      <p class="hero-subtitle">Receitas incríveis para você arrasar na cozinha</p>
+      <p class="hero-subtitle">
+        Receitas incríveis para você arrasar na cozinha
+      </p>
     </div>
   </div>
 </section>
@@ -30,7 +37,7 @@
 <section class="categories-section">
   <div class="container">
     <h2 class="section-title">Escolha uma Categoria</h2>
-    
+
     <div class="categories-grid">
       {#each categories as category}
         <CategoryCard {category} />
@@ -45,12 +52,15 @@
     <div class="cta-content">
       <h3 class="cta-title">Pronta para transformar sua paixão em negócio?</h3>
       <p class="cta-description">
-        Acesse todas as nossas receitas e comece a lucrar com suas criações hoje mesmo!
+        Acesse todas as nossas receitas e comece a lucrar com suas criações hoje
+        mesmo!
       </p>
-      
+
       <div class="cta-buttons">
         <button class="btn btn-primary">Gerar Certificado de Conclusão</button>
-        <a href="/todas-receitas" class="btn btn-secondary">Ver Todas as Receitas</a>
+        <a href="/todas-receitas" class="btn btn-secondary"
+          >Ver Todas as Receitas</a
+        >
       </div>
     </div>
   </div>
@@ -105,7 +115,7 @@
     font-size: 4rem;
     font-weight: 800;
     margin-bottom: var(--spacing-lg);
-    background: linear-gradient(135deg, #F472B6 0%, #FB923C 50%, #FBBF24 100%);
+    background: linear-gradient(135deg, #f472b6 0%, #fb923c 50%, #fbbf24 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -140,7 +150,11 @@
 
   .cta-section {
     padding: var(--spacing-3xl) 0;
-    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(30, 30, 30, 0.8) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--bg-card) 0%,
+      rgba(30, 30, 30, 0.8) 100%
+    );
   }
 
   .cta-content {
@@ -173,28 +187,28 @@
     .hero {
       height: 70vh;
     }
-    
+
     .hero-title {
       font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
       font-size: 1.1rem;
     }
-    
+
     .section-title {
       font-size: 2rem;
     }
-    
+
     .categories-grid {
       grid-template-columns: 1fr;
       gap: var(--spacing-lg);
     }
-    
+
     .cta-title {
       font-size: 1.75rem;
     }
-    
+
     .cta-buttons {
       flex-direction: column;
       align-items: center;
